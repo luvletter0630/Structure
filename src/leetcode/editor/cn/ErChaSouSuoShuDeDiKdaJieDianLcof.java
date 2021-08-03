@@ -39,9 +39,6 @@
 
 package leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ErChaSouSuoShuDeDiKdaJieDianLcof {
     public static void main(String[] args) {
         Solution solution = new ErChaSouSuoShuDeDiKdaJieDianLcof().new Solution();
