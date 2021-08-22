@@ -54,8 +54,9 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
 
         //5 7 7 8 8 10
         // 2 5
-        int [] arrr = solution.searchRange(new int[]{5, 7, 7, 8, 8,8,8,8,8,10}, 8);
-        System.out.println(1);
+        int[] arrr = solution.searchRange(new int[]{5, 7, 7, 8, 8, 8, 8, 8, 8, 10}, 8);
+        System.out.println(arrr[0]);
+        System.out.println(arrr[1]);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -63,6 +64,9 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
         public int[] searchRange(int[] nums, int target) {
             int l = 0;
             int r = nums.length - 1;
+            if (r == -1){
+                return new int[]{-1,-1};
+            }
             while (l < r) {
                 int mid = (r - l >> 1) + l;
                 if (nums[mid] < target) {
@@ -71,7 +75,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
                     r = mid;
                 }
             }
-            int [] res = new int[2];
+            int[] res = new int[2];
             res[0] = l;
             l = 0;
             r = nums.length - 1;
@@ -84,7 +88,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
                 }
             }
             res[1] = r;
-            return r == target?res:new int[]{-1,-1};
+            return nums[r] == target ? res : new int[]{-1, -1};
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
